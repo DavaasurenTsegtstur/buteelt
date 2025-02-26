@@ -1,0 +1,636 @@
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop (master)
+$ mkdir lab6
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop (master)
+$ cd lab6
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git init
+Initialized empty Git repository in C:/Users/Admin/Desktop/lab6/.git/
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ code .
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file 1
+        file 2
+        file 3
+        file 4
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git add .
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git commit -m 'C0'
+[master (root-commit) 8da409c] C0
+ 4 files changed, 4 insertions(+)
+ create mode 100644 file 1
+ create mode 100644 file 2
+ create mode 100644 file 3
+ create mode 100644 file 4
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git branch feature-1
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git checkout feature-1
+Switched to branch 'feature-1'
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (feature-1)
+$ git status
+On branch feature-1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file 1
+        modified:   file 3
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (feature-1)
+$ git add .
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (feature-1)
+$ git commit -m 'C2'
+[feature-1 6f4c3d9] C2
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (feature-1)
+$ git checkout master
+Switched to branch 'master'
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git branch feature-2
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git checkout feature-1
+Switched to branch 'feature-1'
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (feature-1)
+$ git status
+On branch feature-1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file 1
+        modified:   file 3
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (feature-1)
+$ git add .
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (feature-1)
+$ git commit -m 'c3'
+[feature-1 8154bdf] c3
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (feature-1)
+$ git checkout feature-2
+Switched to branch 'feature-2'
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (feature-2)
+$ git status
+On branch feature-2
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file 2
+        modified:   file 4
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (feature-2)
+$ git add .
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (feature-2)
+$ git commit -m 'C4'
+[feature-2 86fc24d] C4
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (feature-2)
+$ git checkout feature-1
+Switched to branch 'feature-1'
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (feature-1)
+$ git checkout master
+Switched to branch 'master'
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file 1
+        modified:   file 3
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git add .
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git commit -m 'c5'
+[master a6db2ae] c5
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git reset HEAD~1
+Unstaged changes after reset:
+M       file 1
+M       file 3
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git checkout feature-1
+error: Your local changes to the following files would be overwritten by checkout:
+        file 1
+        file 3
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file 1
+        modified:   file 3
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git restore .
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git checkout feature-1
+Switched to branch 'feature-1'
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (feature-1)
+$ git merge feature-1
+Already up to date.
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (feature-1)
+$ git checkout master
+Switched to branch 'master'
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git merge feature-1
+Updating 8da409c..8154bdf
+Fast-forward
+ file 1 | 2 +-
+ file 3 | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git merge feature-1 'c6'
+merge: c6 - not something we can merge
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git merge feature-1
+Already up to date.
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git checkout feature-2
+Switched to branch 'feature-2'
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (feature-2)
+$ git checkout master
+Switched to branch 'master'
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file 1
+        modified:   file 3
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git add .
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git commit -m 'C6'
+[master a62ce58] C6
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file 2
+        modified:   file 4
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git add .
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git commit -m 'C7'
+[master dc339b9] C7
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git merge feature-2
+Merge made by the 'ort' strategy.
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git push origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git merge feature-2
+Already up to date.
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git config --global DavaasurenTsegtstur
+error: key does not contain a section: DavaasurenTsegtstur
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git config --global user.name "DavaasurenTsegtstur"
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git config --global user.email "git@github.com:DavaasurenTsegtstur/buteelt.git"
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git push origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git remote add "DavaasurenTsegtstur" "[[200~https://github.com/DavaasurenTsegtstur/buteelt.git~
+"
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git push "DavaasurenTsegtstur"
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream DavaasurenTsegtstur master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git push master
+fatal: 'master' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git push --set-upstream DavaasurenTsegtstur master
+fatal: protocol '[[200~https' is not supported
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git push -u origin <branch-name>   # The `-u` sets the upstream (tracking) reference
+bash: syntax error near unexpected token `newline'
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git push -u origin <branch-name>
+bash: syntax error near unexpected token `newline'
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git push -u origin <lab6>
+bash: syntax error near unexpected token `newline'
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git push -u origin <master>
+bash: syntax error near unexpected token `newline'
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/etc/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+core.editor="C:\\Program Files\\Microsoft VS Code\\bin\\code" --wait
+pull.rebase=false
+credential.helper=manager
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+user.name=DavaasurenTsegtstur
+user.erdenehuu1230=Sandeep.D
+user.email=git@github.com:DavaasurenTsegtstur/buteelt.git
+user.username=Erdenehuu1230-github
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+remote.DavaasurenTsegtstur.url=[[200~https://github.com/DavaasurenTsegtstur/buteelt.git~
+
+remote.DavaasurenTsegtstur.fetch=+refs/heads/*:refs/remotes/DavaasurenTsegtstur/*
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git push origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git clone https://github.com/DavaasurenTsegtstur/buteelt.git
+Cloning into 'buteelt'...
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 10 (delta 0), reused 10 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (10/10), done.
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git push origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ cd https://github.com/DavaasurenTsegtstur/buteelt.git
+bash: cd: https://github.com/DavaasurenTsegtstur/buteelt.git: No such file or directory
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ cd https://github.com/DavaasurenTsegtstur/buteelt.git
+bash: cd: https://github.com/DavaasurenTsegtstur/buteelt.git: No such file or directory
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream DavaasurenTsegtstur master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        buteelt/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git merge feature-2
+Already up to date.
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git status
+On branch feature-1
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        buteelt/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (feature-1)
+$ git push origin 'master'
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (feature-1)
+$ git push origin DavaasurenTsegtstur
+error: src refspec DavaasurenTsegtstur does not match any
+error: failed to push some refs to 'origin'
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git push origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git push origin .
+fatal: invalid refspec '.'
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git push origin
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git push --set-upstream origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git remote add origin https://github.com/DavaasurenTsegtstur/buteelt.git
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git remote -v
+DavaasurenTsegtstur     [[200~https://github.com/DavaasurenTsegtstur/buteelt.git~
+ (fetch)
+DavaasurenTsegtstur     [[200~https://github.com/DavaasurenTsegtstur/buteelt.git~
+ (push)
+origin  https://github.com/DavaasurenTsegtstur/buteelt.git (fetch)
+origin  https://github.com/DavaasurenTsegtstur/buteelt.git (push)
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git push -u origin lab6
+error: src refspec lab6 does not match any
+error: failed to push some refs to 'https://github.com/DavaasurenTsegtstur/buteelt.git'
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        buteelt/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git restore buteelt/
+error: pathspec 'buteelt/' did not match any file(s) known to git
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git restore --staged buteelt/
+error: pathspec 'buteelt/' did not match any file(s) known to git
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git reset HEAD buteelt/
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git push -u origin
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git push -u origin lab6
+error: src refspec lab6 does not match any
+error: failed to push some refs to 'https://github.com/DavaasurenTsegtstur/buteelt.git'
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git push -u origin master
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/DavaasurenTsegtstur/buteelt.git/'
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        buteelt/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git add .
+warning: adding embedded git repository: buteelt
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint:
+hint:   git submodule add <url> buteelt
+hint:
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint:
+hint:   git rm --cached buteelt
+hint:
+hint: See "git help submodule" for more information.
+hint: Disable this message with "git config advice.addEmbeddedRepo false"
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git reset
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        buteelt/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git restore
+fatal: you must specify path(s) to restore
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git restore --staged
+fatal: you must specify path(s) to restore
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        buteelt/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git restore --staged
+fatal: you must specify path(s) to restore
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git restore buteelt/
+error: pathspec 'buteelt/' did not match any file(s) known to git
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        buteelt/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$ git status^C
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab6 (master)
+$
