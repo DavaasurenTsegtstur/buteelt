@@ -1,0 +1,87 @@
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab9 (master)
+$ git init
+Initialized empty Git repository in C:/Users/Admin/Desktop/lab9/.git/
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab9 (master)
+$ git add README.md
+fatal: pathspec 'README.md' did not match any files
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab9 (master)
+$ git commit -m "lab9"
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        jishe1.PNG
+        jishe2.1.PNG
+        jishe2.2.PNG
+        jishe2.PNG
+        jishe4.1.PNG
+        lab9.zip
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab9 (master)
+$ git remote add origin https://github.com/DavaasurenTsegtstur/buteelt.git
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab9 (master)
+$ git push -u origin master
+error: src refspec master does not match any
+error: failed to push some refs to 'https://github.com/DavaasurenTsegtstur/buteelt.git'
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab9 (master)
+$ git remote add origin https://github.com/DavaasurenTsegtstur/buteelt.git      error: remote origin already exists.
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab9 (master)
+$ git pull origin master --allow-unrelated-histories
+remote: Enumerating objects: 34, done.
+remote: Counting objects: 100% (34/34), done.
+remote: Compressing objects: 100% (29/29), done.
+remote: Total 34 (delta 6), reused 9 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (34/34), 144.43 KiB | 105.00 KiB/s, done.
+From https://github.com/DavaasurenTsegtstur/buteelt
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> origin/master
+error: The following untracked working tree files would be overwritten by merge:
+        jishe1.PNG
+        jishe2.1.PNG
+        jishe2.2.PNG
+        jishe2.PNG
+        jishe4.1.PNG
+        lab9.zip
+Please move or remove them before you merge.
+Aborting
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab9 (master)
+$ git commit -a -m lab9
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        jishe1.PNG
+        jishe2.1.PNG
+        jishe2.2.PNG
+        jishe2.PNG
+        jishe4.1.PNG
+        lab9.zip
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab9 (master)
+$ git push -u origin master
+error: src refspec master does not match any
+error: failed to push some refs to 'https://github.com/DavaasurenTsegtstur/buteelt.git'
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab9 (master)
+$ ^C
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab9 (master)
+$ ^C
+
+Admin@DESKTOP-MNEP94O MINGW64 ~/Desktop/lab9 (master)
+$
